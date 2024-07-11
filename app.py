@@ -35,12 +35,12 @@ def index():
                     var img = document.getElementById('canaryImg');
                     var btn = document.getElementById('toggleBtn');
                     var text = document.getElementById('displayText');
-                    if (img.src.includes('canary-working.png')) {{
-                        img.src = '/canary-vacation.png';
+                    if (img.src.includes('/assets/canary-working.png')) {{
+                        img.src = '/assets/canary-vacation.png';
                         btn.textContent = 'Back to Work!';
                         text.innerHTML = "It's " + new Date().toLocaleTimeString('en-US', {{ timeZone: 'Pacific/Honolulu', hour: '2-digit', minute: '2-digit', hour12: true }}) + " in Hawaii.<br>While you're stuck debugging, Captain Canary is catching waves and enjoying the Aloha spirit! 🏄‍♂️🌺";
                     }} else {{
-                        img.src = '/canary-working.png';
+                        img.src = '/assets/canary-working.png';
                         btn.textContent = 'Go on Vacation!';
                         text.innerHTML = 'Pod Name: {pod_name}';
                     }}
@@ -48,7 +48,7 @@ def index():
             </script>
         </head>
         <body>
-            <img id="canaryImg" src="/canary-working.png" alt="Captain Canary Working">
+            <img id="canaryImg" src="/assets/canary-working.png" alt="Captain Canary Working">
             <div id="content">
                 <button id="toggleBtn" onclick="toggleImage()">Go on Vacation!</button>
                 <p id="displayText">Pod Name: {pod_name}</p>
