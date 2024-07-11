@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: captain-canary-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: captain-canary-app
+  template:
+    metadata:
+      labels:
+        app: captain-canary-app
+    spec:
+      containers:
+      - name: captain-canary-app
+        image: {{.Values.image.name}}:{{.Values.image.tag}}
+        ports:
+        - containerPort: 3000
